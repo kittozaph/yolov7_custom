@@ -1,0 +1,62 @@
+<!-- index.html -->
+<html>
+<head>
+    <title>RTSP Cameras</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Set the initial image sources
+            $('#cam1').attr('src', '/rtsp_feed1');
+            $('#cam2').attr('src', '/rtsp_feed2');
+            // Handle the click event for button 1
+            $('#btn1').click(function () {
+                $('#cam1').attr('src', '/rtsp_feed1');
+            });
+            // Handle the click event for button 2
+            $('#btn2').click(function () {
+                $('#cam2').attr('src', '/rtsp_feed2');
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>RTSP Cameras</h1>
+    <div class="w3-row-padding w3-margin-bottom">
+      <div class="w3-quarter">
+        <div class="w3-container w3-blue w3-padding-16">
+          <div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
+          <div class="w3-right">
+          </div>
+          <div class="w3-clear">
+            <button onclick="startrtsp1()">RTSP CAM 1</button>
+          </div>
+        </div>
+        <img id="cam1" width="640" height="480">
+      </div>
+      <div class="w3-quarter">
+        <div class="w3-container w3-blue w3-padding-16">
+          <div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
+          <div class="w3-right">
+          </div>
+          <div class="w3-clear"></div>
+          <button onclick="startrtsp2()">RTSP CAM 2</button>
+        </div>
+        <img id="cam2" width="640" height="480">
+      </div>
+    </div>
+</body>
+
+<script>
+  function startrtsp1() {
+    console.log('start');
+    window.location.href = "/rtsp_feed1";
+  }
+
+  function startrtsp2() {
+    console.log('start');
+    window.location.href = "/rtsp_feed2";
+  }
+
+</script>
+
+</html>
